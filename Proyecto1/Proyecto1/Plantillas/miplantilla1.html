@@ -2,5 +2,10 @@
     <body>
         <h1>Hola Mundo primera pagina con Django</h1>
         <h2 style="color: rgb(235, 142, 142)">Esta es nuestra primera platilla en django</h2>
+        <p>Hola {{nombre_persona}} {{apellido_persona}} {{apellido_2}} sigue aprendiendo se constante.</p>
+        <p>Estamos viendo como es el comportamiento de las plantillas en como recuperan las claves en una vista dentro de un diccionario a la fecha: {{fecha_ahora}}</p>
+        <p>Fecha: {{fecha_ahora.day}} / {{fecha_ahora.month}} / {{fecha_ahora.year}}</p>
+
+        <p>Acceso a atributos desde un constructor: {{objeto_persona1_nom}} {{objeto_persona1_ap}}</p>
     </body>
 </html>
