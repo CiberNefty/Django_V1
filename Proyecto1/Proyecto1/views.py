@@ -15,6 +15,7 @@ def saludo(request):
     nombre = "Dani"
     apellido = "Vera"
     fecha_ahora = datetime.datetime.now()
+    temas2 = ["Indice 0","Indice 1", "Indice 2","Indice 3", "Indice 4"]
 
     # Cargamos nuestra plantilla 
     doc_externo = open("C:/Users/danim/Proyectos/Django_pildoras/Proyecto1/Proyecto1/Plantillas/miplantilla1.html")
@@ -25,7 +26,8 @@ def saludo(request):
 
     # Crear contexto
     contexto = Context({"nombre_persona": nombre, "apellido_persona": apellido, "apellido_2": "Arias", "fecha_ahora": fecha_ahora,
-                        "objeto_persona1_nom": p1.nombre, "objeto_persona1_ap": p1.apellido})
+                        "objeto_persona1_nom": p1.nombre, "objeto_persona1_ap": p1.apellido, "temas":["Plantillas","Modelos", "FOrmularios","Listas", "Despliegue"],
+                        "temas2": temas2})
 
     # Renderizar plantilla (variable)
     documento = platilla.render(contexto)
