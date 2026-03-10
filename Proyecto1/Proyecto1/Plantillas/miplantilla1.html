@@ -2,7 +2,18 @@
     <body>
         <h1>Hola Mundo primera pagina con Django</h1>
         <h2 style="color: rgb(235, 142, 142)">Esta es nuestra primera platilla en django</h2>
-        <p>Hola {{nombre_persona.upper}} {{apellido_persona.upper}} {{apellido_2.upper}} sigue aprendiendo se constante.</p>
+        <p>Hola {{nombre_persona|upper}} {{apellido_persona.lower}} {{apellido_2.upper}} sigue aprendiendo se constante.</p>
+        
+        {# Esto es un comentario en la plantilla #}
+        {% comment %} Esto es comentar en varias lineas;
+            filtro: nombre_persona.upper es == nombre_persona|upper 
+        {% endcomment %}
+
+        {% if nombre_persona == 'Dani' %}
+        <p>Validando practicas con condicionales por: <strong>{{nombre_persona}} {{apellido_persona}}</strong>. :D</p>
+        {% else %}
+        <p>Validando practicas con condionales por: <strong>Un suplente</strong>.</p>
+        {% endif %}
         <p>Estamos viendo como es el comportamiento de las plantillas en como recuperan las claves en una vista dentro de un diccionario a la fecha: {{fecha_ahora}}</p>
         <p>Fecha: {{fecha_ahora.day}} / {{fecha_ahora.month}} / {{fecha_ahora.year}}</p>
 
@@ -14,7 +25,11 @@
             <ul>
             {% if temas2 %}
                 {% for losTemas in temas2%}
-                    <li>{{losTemas}}</li>
+                    {% comment %}<li>{{losTemas}}</li>
+                    Filtros encadenados;
+                    {{losTemas|upper|lower}}
+                    {% endcomment %}
+                    <li>{{losTemas.lower|first}}</li>
                 {% endfor %}
                 {% else %}
                     <p>No hya elementos en nuestra lista</p>
