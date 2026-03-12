@@ -3,7 +3,7 @@ import datetime
 from django.template import Template, Context
 #from django.template import loader
 from django.template.loader import get_template
-
+from django.shortcuts import render
 class Persona(object):
     def __init__(self, nombre, apellido):
         self.nombre = nombre
@@ -28,7 +28,8 @@ def saludo(request):
     
     # Cargar plantilla mas elegante desde eel metodo loader con django
     #doc_externo = loader.get_template("miplantilla1.html")
-    doc_externo = get_template("miplantilla1.html")
+    #doc_externo = get_template("miplantilla1.html")
+
 
     # Crear contexto
     #contexto = Context({"nombre_persona": nombre, "apellido_persona": apellido, "apellido_2": "Arias", "fecha_ahora": fecha_ahora,
@@ -41,11 +42,16 @@ def saludo(request):
     
     # Renderizar plantilla (variable)
     #documento = platilla.render(contexto)
-    documento = doc_externo.render({"nombre_persona": nombre, "apellido_persona": apellido, "apellido_2": "Arias", "fecha_ahora": fecha_ahora,
+    #documento = doc_externo.render({"nombre_persona": nombre, "apellido_persona": apellido, "apellido_2": "Arias", "fecha_ahora": fecha_ahora,
+    #                    "objeto_persona1_nom": p1.nombre, "objeto_persona1_ap": p1.apellido, "temas":["Plantillas","Modelos", "FOrmularios","Listas", "Despliegue"],
+    #                    "temas2": temas2})
+
+    # return HttpResponse(documento)
+
+    # AHora vamos a usar el metodo render de django.shortcuts para renderizar la plantilla y pasarle el contexto
+    return render(request, "miplantilla1.html",{"nombre_persona": nombre, "apellido_persona": apellido, "apellido_2": "Arias", "fecha_ahora": fecha_ahora,
                         "objeto_persona1_nom": p1.nombre, "objeto_persona1_ap": p1.apellido, "temas":["Plantillas","Modelos", "FOrmularios","Listas", "Despliegue"],
                         "temas2": temas2})
-
-    return HttpResponse(documento)
 
 def despedida(request):
     return HttpResponse("Adios buena practica para django ")
