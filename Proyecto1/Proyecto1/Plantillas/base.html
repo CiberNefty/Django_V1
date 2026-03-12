@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+
+</head>
+
+<body>
+    <h1 style="background-color: darkolivegreen; color: bisque; text-align: center;">Daniel Diseñando en Django con HTML</h1>
+    {% include "superior/barra.html" %}
+    
+    <h3>Esto es un contenido referente a la plantilla base que a continuacion abajo es un ejemplo del contenido que va a ir cambiando.</h3>
+
+    {% comment %} Zona que va a cambiar en cada plantilla que herede de esta plantilla base, es decir, el bloque de contenido que se va a modificar en cada plantilla hija. 
+        Entonces la siguiente instruccion son las etiquetas que va a indicar que todo lo que se encucentre dentro de  (%block content% -- % endblock%) va a cambiar.
+    {% endcomment %}
+
+    {% block content %} 
+    
+    {% endblock %}
+
+    <p style="background-color: darkolivegreen; color: bisque; text-align: left;">Pie de pagina imaginativo: Vamos por buen camino, seguimos con constancia.</p>
+
+</body>
+
+</html>

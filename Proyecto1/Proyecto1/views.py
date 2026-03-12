@@ -53,6 +53,16 @@ def saludo(request):
                         "objeto_persona1_nom": p1.nombre, "objeto_persona1_ap": p1.apellido, "temas":["Plantillas","Modelos", "FOrmularios","Listas", "Despliegue"],
                         "temas2": temas2})
 
+def plantillaHija(request):
+    fecha_actual = datetime.datetime.now()
+
+    return render(request, "plantillaHija.html", {"fecha_ahora": fecha_actual})
+
+def plantillaHija2(request):
+    fecha_actual = datetime.datetime.now()
+
+    return render(request, "plantillaHija2.html", {"fecha_ahora": fecha_actual})
+
 def despedida(request):
     return HttpResponse("Adios buena practica para django ")
 
