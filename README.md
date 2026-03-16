@@ -42,8 +42,8 @@ Cómo ejecutar:
 - venv\Scripts\activate       # Windows
 - source venv/bin/activate    # Linux/Mac
 - pip install -r ../requirements.txt
-# Por si realizas algun cambio en los modelos ejecuta: python manage.py makemigrations
+- # Por si realizas algun cambio en los modelos ejecuta: python manage.py makemigrations #
 - python manage.py migrate
-# Seguir los pasos del archivo para que hagas pruebas: insert_datos.mk
-# Recuerda validar en PostgreSQL
+- # Seguir los pasos del archivo para que hagas pruebas: # # insert_datos.mk 
+- # Recuerda validar en PostgreSQL
 ```
