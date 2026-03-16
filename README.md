@@ -38,12 +38,12 @@ Proyecto que se conecta a PostgreSQL y gestiona artículos.
 
 Cómo ejecutar:
 ```cd TiendaOnline
-python -m venv venv
-venv\Scripts\activate       # Windows
-source venv/bin/activate    # Linux/Mac
-pip install -r ../requirements.txt
+- python -m venv venv
+- venv\Scripts\activate       # Windows
+- source venv/bin/activate    # Linux/Mac
+- pip install -r ../requirements.txt
 # Por si realizas algun cambio en los modelos ejecuta: python manage.py makemigrations
-python manage.py migrate
+- python manage.py migrate
 # Seguir los pasos del archivo para que hagas pruebas: insert_datos.mk
 # Recuerda validar en PostgreSQL
 ```
