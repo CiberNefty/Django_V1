@@ -15,7 +15,8 @@ Proyecto básico para conocer:
 - Enlazar Views, URLs, plantillas HTML, condicionales.
 
 ### Cómo ejecutar: (Clonar)
-```bash
+```
+bash:
 - cd Proyecto1
 - python -m venv venv
 - # Activar entorno virtual #
@@ -37,7 +38,9 @@ Proyecto que se conecta a PostgreSQL y gestiona artículos.
 # Nota: asegúrate de que PostgreSQL esté corriendo y que los datos de conexión en settings.py sean correctos.
 
 Cómo ejecutar:
-```cd TiendaOnline
+```
+bash:
+cd TiendaOnline
 - python -m venv venv
 - venv\Scripts\activate       # Windows
 - source venv/bin/activate    # Linux/Mac
